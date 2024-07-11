@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .active {
+    @apply text-gruv-yellow underline underline-offset-4
+  }
+}
