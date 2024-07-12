@@ -1,13 +1,14 @@
 <script>
   import Tabs from "../lib/Tabs.svelte";
   import Convertor1 from "../lib/Convertor1.svelte";
+  import Convertor2 from "../lib/Convertor2.svelte";
 
   let tabs = ["Convertor 1", "Convertor 2", "Ciphering"];
   let activeTab = "Convertor 1";
 
   const tabChange = (e) => {
     activeTab = e.detail;
-  }
+  };
 </script>
 
 <main>
@@ -20,8 +21,14 @@
       />
     </div>
   </div>
-  <Tabs {tabs} {activeTab} on:tabChange={tabChange}/>
+  <Tabs {tabs} {activeTab} on:tabChange={tabChange} />
   {#if activeTab === "Convertor 1"}
     <Convertor1 />
+  {:else if activeTab === "Convertor 2"}
+    <Convertor2 />
+  {:else if activeTab === "Ciphering"}
+    <p>Ciphering</p>
+  {:else}
+    error
   {/if}
 </main>
