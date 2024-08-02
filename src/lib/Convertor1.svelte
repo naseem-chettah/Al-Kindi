@@ -2,8 +2,8 @@
   import { invoke } from "@tauri-apps/api/tauri";
 
   let userInputType = "dec";
-  let outputType = "bin";
   let outputTypes = ["bin", "oct", "hex"];
+  let outputType = outputTypes[0];
   let outputValue;
   $: text = userInputType === "hex";
 
@@ -22,7 +22,11 @@
         outputTypes = ["bin", "oct", "dec"];
         break;
     }
-    outputType = outputTypes[0];
+
+    if (outputType === userInputType) {
+      outputType = outputTypes[0];
+    }
+
     const input = document.getElementById("input");
     input.value = "";
     outputValue = "";
@@ -30,18 +34,67 @@
 
   function handleInputChange(e) {
     switch (userInputType) {
-      /* case "bin":
+      case "bin":
         handleBinConv(e.target.value);
         break;
       case "oct":
         handleOctConv(e.target.value);
-        break; */
+        break;
       case "dec":
         handleDecConv(e.target.value);
         break;
-      /* case "hex":
+      case "hex":
+        e.target.value = e.target.value.toUpperCase();
         handleHexConv(e.target.value);
-        break; */
+        break;
+    }
+  }
+
+  async function handleBinConv(userInput) {
+    const binRegex = /^[01]+$/;
+
+    const num = parseInt(userInput, 10);
+    if (isNaN(num) || !binRegex.test(userInput)) {
+      const input = document.getElementById("input");
+      input.value = "";
+      outputValue = "";
+      return;
+    }
+
+    switch (outputType) {
+      case "oct":
+        outputValue = String(await invoke("b2o", { x: num }));
+        break;
+      case "dec":
+        outputValue = String(await invoke("b2d", { x: num }));
+        break;
+      case "hex":
+        outputValue = await invoke("b2h", { x: num });
+        break;
+    }
+  }
+
+  async function handleOctConv(userInput) {
+    const octRegex = /^[0-7]+$/;
+
+    const num = parseInt(userInput, 10);
+    if (isNaN(num) || !octRegex.test(userInput)) {
+      const input = document.getElementById("input");
+      input.value = "";
+      outputValue = "";
+      return;
+    }
+
+    switch (outputType) {
+      case "bin":
+        outputValue = String(await invoke("o2b", { x: num }));
+        break;
+      case "dec":
+        outputValue = String(await invoke("o2d", { x: num }));
+        break;
+      case "hex":
+        outputValue = await invoke("o2h", { x: num });
+        break;
     }
   }
 
@@ -63,6 +116,29 @@
         break;
       case "hex":
         outputValue = await invoke("d2h", { x: num });
+        break;
+    }
+  }
+
+  async function handleHexConv(userInput) {
+    const hexRegex = /^[0-9A-Fa-f]+$/;
+
+    if (!hexRegex.test(userInput)) {
+      const input = document.getElementById("input");
+      input.value = "";
+      outputValue = "";
+      return;
+    }
+
+    switch (outputType) {
+      case "bin":
+        outputValue = String(await invoke("h2b", { x: userInput }));
+        break;
+      case "oct":
+        outputValue = String(await invoke("h2o", { x: userInput }));
+        break;
+      case "dec":
+        outputValue = await invoke("h2d", { x: userInput });
         break;
     }
   }
@@ -93,6 +169,7 @@
       name="output-type"
       id="output-type"
       bind:value={outputType}
+      on:change={handleChangeType}
     >
       {#each outputTypes as type}
         <option value={type}>{type.toUpperCase()}</option>
