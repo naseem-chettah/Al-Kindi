@@ -9,8 +9,10 @@
 <div class="tabs min-w-[50%]">
   <ul class="flex justify-evenly px-32">
     {#each tabs as tab}
-      <li on:click={() => dispatch('tabChange', tab)}>
-        <div class:active={tab === activeTab}>{tab}</div>
+      <li>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <div on:click={() => dispatch('tabChange', tab)} class:active={tab === activeTab}>{tab}</div>
       </li>
     {/each}
   </ul>
