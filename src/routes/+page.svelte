@@ -1,7 +1,7 @@
 <script>
-  import Tabs from "../lib/Tabs.svelte";
-  import Convertor1 from "../lib/Convertor1.svelte";
-  import Convertor2 from "../lib/Convertor2.svelte";
+  import Tabs from "$lib/Tabs.svelte";
+  import Convertor1 from "$lib/Convertor1.svelte";
+  import Convertor2 from "$lib/Convertor2.svelte";
 
   let tabs = ["Convertor 1", "Convertor 2", "Ciphering"];
   let activeTab = "Convertor 1";
@@ -16,7 +16,7 @@
     <div class="min-w-[50%] m-5">
       <img
         class="max-h-56 w-full object-cover"
-        src="src/static/img/banner.jpg"
+        src="/img/banner.jpg"
         alt="banner"
       />
     </div>
