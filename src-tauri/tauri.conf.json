@@ -55,11 +55,11 @@
     },
     "windows": [
       {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
         "title": "Al Kindi",
-        "width": 800
+        "height": 550,
+        "width": 500,
+        "fullscreen": false,
+        "resizable": false
       }
     ]
   }

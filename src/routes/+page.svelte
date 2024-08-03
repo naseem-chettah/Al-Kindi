@@ -13,15 +13,15 @@
 
 <main>
   <div class="flex justify-center">
-    <div class="min-w-[50%] m-5">
-      <img
-        class="max-h-56 w-full object-cover"
-        src="/img/banner.jpg"
-        alt="banner"
-      />
-    </div>
+    <img
+      class="max-h-56 w-full object-cover m-2"
+      src="/img/banner.jpg"
+      alt="banner"
+    />
   </div>
+
   <Tabs {tabs} {activeTab} on:tabChange={tabChange} />
+
   {#if activeTab === "Convertor 1"}
     <Convertor1 />
   {:else if activeTab === "Convertor 2"}
@@ -32,3 +32,6 @@
     error
   {/if}
 </main>
+
+<style>
+</style>

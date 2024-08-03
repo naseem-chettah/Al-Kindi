@@ -4,6 +4,6 @@
 
 @layer components {
   .active {
-    @apply text-gruv-yellow underline underline-offset-4
+    @apply text-gruv-yellow underline underline-offset-4;
   }
 }

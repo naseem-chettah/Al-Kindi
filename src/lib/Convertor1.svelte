@@ -144,43 +144,41 @@
   }
 </script>
 
-<main class="flex justify-center">
-  <div class="grid grid-cols-4 min-w-[50%] m-5">
-    <input
-      class="p-2 m-2 border-b border-b-gruv-black-l outline-none col-span-3"
-      type={text ? "text" : "number"}
-      id="input"
-      on:input={handleInputChange}
-    />
-    <select
-      class="p-2 m-2 border border-gruv-black-l bg-white rounded outline-none"
-      name="input-type"
-      id="input-type"
-      bind:value={userInputType}
-      on:change={handleChangeType}
-    >
-      <option value="bin">BIN</option>
-      <option value="oct">OCT</option>
-      <option value="dec" selected>DEC</option>
-      <option value="hex">HEX</option>
-    </select>
-    <select
-      class="p-2 m-2 border border-gruv-black-l bg-white rounded outline-none"
-      name="output-type"
-      id="output-type"
-      bind:value={outputType}
-      on:change={handleChangeType}
-    >
-      {#each outputTypes as type}
-        <option value={type}>{type.toUpperCase()}</option>
-      {/each}
-    </select>
-    <input
-      class="p-2 m-2 border-b border-b-gruv-black-l outline-none col-span-3"
-      readonly
-      id="output"
-      type="text"
-      bind:value={outputValue}
-    />
-  </div>
-</main>
+<div class="grid grid-cols-4 m-2">
+  <input
+    class="p-2 m-2 border-b border-b-gruv-black-l outline-none col-span-3"
+    type={text ? "text" : "number"}
+    id="input"
+    on:input={handleInputChange}
+  />
+  <select
+    class="p-2 m-2 border border-gruv-black-l bg-white rounded outline-none"
+    name="input-type"
+    id="input-type"
+    bind:value={userInputType}
+    on:change={handleChangeType}
+  >
+    <option value="bin">BIN</option>
+    <option value="oct">OCT</option>
+    <option value="dec" selected>DEC</option>
+    <option value="hex">HEX</option>
+  </select>
+  <select
+    class="p-2 m-2 border border-gruv-black-l bg-white rounded outline-none"
+    name="output-type"
+    id="output-type"
+    bind:value={outputType}
+    on:change={handleChangeType}
+  >
+    {#each outputTypes as type}
+      <option value={type}>{type.toUpperCase()}</option>
+    {/each}
+  </select>
+  <input
+    class="p-2 m-2 border-b border-b-gruv-black-l outline-none col-span-3"
+    readonly
+    id="output"
+    type="text"
+    bind:value={outputValue}
+  />
+</div>
