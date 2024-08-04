@@ -1,38 +1,31 @@
-# create-svelte
+# Al-Kindi 2024
+This version of [Al-Kindi](https://github.com/naseem-chettah/Al-Kindi) isn't in anyway an improvement to the software, I'm just practicing and learning through developing it again but with a different approach.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Why is the UI ugly?
+Because I suck at CSS.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
+## Installation
+- Debian, Ubuntu:
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0/al-kindi_0.1.0_amd64.deb"
 
-# create a new project in my-app
-npm create svelte@latest my-app
+sudo apt install ./al-kindi_0.1.0_amd64.deb
+```
+- Fedora, CentOS, Red Hat:
+```bash
+wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0/al-kindi-0.1.0-1.x86_64.rpm"
+
+sudo rpm -i al-kindi-0.1.0-1.x86_64.rpm
+```
+- Other:
+```bash
+wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0/al-kindi_0.1.0_amd64.AppImage"
+
+chmod +x al-kindi_0.1.0_amd64.AppImage
+
+./al-kindi_0.1.0_amd64.AppImage
 ```
 
-## Developing
+## License
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Al-Kindi 2024 is released under the GPL-3.0 License. For more details, see the [LICENSE](https://github.com/naseem-chettah/Al-Kindi/blob/2024/LICENSE) file.
