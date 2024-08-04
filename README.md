@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/naseem-chettah/Al-Kindi/raw/blob/2024/src-tauri/icons/128x128.png" alt="Al Kindi" width=128 height=128>
+    <img src="https://raw.githubusercontent.com/naseem-chettah/Al-Kindi/2024/src-tauri/icons/128x128.png" alt="Al Kindi" width=128 height=128>
 </p>
 # Al-Kindi 2024
 This version of [Al-Kindi](https://github.com/naseem-chettah/Al-Kindi) isn't in anyway an improvement to the software, I'm just practicing and learning through developing it again but with a different approach.
