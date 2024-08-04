@@ -633,10 +633,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-transparent {
-  background-color: transparent;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -644,6 +640,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .outline-none {
