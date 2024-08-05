@@ -14,7 +14,7 @@ Because I suck at CSS.
 - Debian, Ubuntu:
 
 ```bash
-wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0/al-kindi_0.1.0_amd64.deb"
+wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0-linux/al-kindi_0.1.0_amd64.deb"
 
 sudo apt install ./al-kindi_0.1.0_amd64.deb
 ```
@@ -22,7 +22,7 @@ sudo apt install ./al-kindi_0.1.0_amd64.deb
 - Fedora, CentOS, Red Hat:
 
 ```bash
-wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0/al-kindi-0.1.0-1.x86_64.rpm"
+wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0-linux/al-kindi-0.1.0-1.x86_64.rpm"
 
 sudo rpm -i al-kindi-0.1.0-1.x86_64.rpm
 ```
@@ -30,12 +30,14 @@ sudo rpm -i al-kindi-0.1.0-1.x86_64.rpm
 - Other:
 
 ```bash
-wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0/al-kindi_0.1.0_amd64.AppImage"
+wget "https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0-linux/al-kindi_0.1.0_amd64.AppImage"
 
 chmod +x ./al-kindi_0.1.0_amd64.AppImage
 
 ./al-kindi_0.1.0_amd64.AppImage
 ```
+
+- 🤮 Windows: [setup](https://github.com/naseem-chettah/Al-Kindi/releases/download/v0.1.0-windows/al-kindi_0.1.0_x64-setup.exe)
 
 ## License
 
